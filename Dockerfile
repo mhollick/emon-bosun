@@ -77,7 +77,7 @@ RUN adduser  -S -G bosun -D -H -h /data/bosun bosun && \
 RUN go get bosun.org/cmd/bosun && \
     install /build/go/bin/bosun /usr/local/bin/
 
-ADD config/bosun/bosun.conf
+ADD config/bosun/bosun.conf /etc/bosun.conf
 
 # Install and configure Nginx
 # This to be used to enable basic auth on bosun
