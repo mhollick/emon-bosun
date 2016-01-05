@@ -27,7 +27,7 @@ check process rsyslogd
 
 check process bosun
   matching "bosun"
-  start program = "/bin/su - bosun /usr/bin/bosun -r -c /etc/bosun.conf"
+  start program = "/bin/su - bosun -c '/usr/local/bin/bosun -r -c /etc/bosun.conf &'"
   stop program = "/usr/bin/pkill bosun"
   if failed port 3000 then restart
   if 5 restarts within 5 cycles then alert
